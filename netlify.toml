@@ -2,5 +2,10 @@
   # Define which paths this specific [[headers]] block will cover.
   for = "/*"
     [headers.values]
-  Content-Security-Policy = "frame-ancestors https://www.youtube.com"
+    Content-Security-Policy = "frame-ancestors https://www.youtube.com"
     Access-Control-Allow-Origin = "*"
+    cache-control = '''
+	max-age=0,
+	no-cache,
+	no-store,
+	must-revalidate'''
