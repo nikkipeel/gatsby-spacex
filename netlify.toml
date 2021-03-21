@@ -2,5 +2,5 @@
   # Define which paths this specific [[headers]] block will cover.
   for = "/*"
     [headers.values]
-    X-FRAME-OPTIONS = SAMEORIGIN
+    X-FRAME-OPTIONS = "SAMEORIGIN"
     Access-Control-Allow-Origin = "*"
