@@ -1,4 +1,5 @@
 [[headers]]
+  # Define which paths this specific [[headers]] block will cover.
   for = "/*"
-  [headers.values]
-    X-Frame-Options = "ALLOW FROM https://youtube.com"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
