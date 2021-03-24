@@ -57,7 +57,7 @@ const PastLaunches = () => {
             
             <div className="flex items-center mt-4">
             <a href={links.wikipedia} className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pr-8">Learn More</a>
-            <a href={links.video_link}  className="font-bold font-mono border-4 gradient blue p-2">View Launch</a>
+            <a href={links.video_link}  className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline p-2">View Launch</a>
             </div>
       </div>
         </li>

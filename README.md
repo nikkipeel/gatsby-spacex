@@ -8,6 +8,5 @@
 
 #### Todos
 - Add button with 'loadMore' functionality for pastLaunches component, limit 10 per click
-- Fix (CORS-related?) issue with YouTube videos for some pastLaunches not loading
 - Consider upgrading pastLaunches and rockets to v4 (fetching the same data; prior issue: could not find all required params in upgraded API and was unable to properly sort by most recent launch)
-- Add transition animations to elements and additional styling
+- Add transition animations to elements

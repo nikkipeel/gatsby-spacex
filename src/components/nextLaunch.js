@@ -27,7 +27,7 @@ const NextLaunch = () => {
       <img src={launch.links.patch.small} alt={launch.name} style={{ maxWidth: '150px'}}/>
       <h2 className="text-xl font-bold">{launch.name}</h2>
       <strong>Flight Number {launch.flight_number}</strong>
-      <p><strong>Launch Date: </strong>{moment(launch.date_local).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
+      <p class="w-44 text-center"><strong>Launch Date: </strong>{moment(launch.date_local).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
 
       <a className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pt-2 pb-4" href={launch.links.wikipedia}>Learn More </a>
     </div>

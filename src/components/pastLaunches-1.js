@@ -8,7 +8,7 @@ const PastLaunches = () => {
     const getPastLaunches = () => {
         return fetch('https://api.spacexdata.com/v3/launches/past?limit=50&sort=flight_number&order=desc')
         .then((res) => res.json())
-      }
+    }
     
   const allLaunches = JSON.stringify(getPastLaunches());
 
