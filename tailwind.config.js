@@ -164,7 +164,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'ui-sans-serif',
+        'Source Sans Pro',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
@@ -181,7 +181,7 @@ module.exports = {
       ],
       serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
-        'ui-monospace',
+        'Source Code Pro',
         'SFMono-Regular',
         'Menlo',
         'Monaco',

@@ -29,7 +29,7 @@ const NextLaunch = () => {
       <strong>Flight Number {launch.flight_number}</strong>
       <p><strong>Launch Date: </strong>{moment(launch.date_local).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
 
-      <a className="font-bold bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 tracking-wide transition duration-500 ease-in-out hover:text-blue-300 hover:underline" href={launch.links.wikipedia}>More Info </a>
+      <a className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pt-2 pb-4" href={launch.links.wikipedia}>Learn More </a>
     </div>
   )
 }

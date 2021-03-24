@@ -31,31 +31,16 @@ const PastLaunches = () => {
 
 
     <ul className="grid py-2 lg:grid-cols-3 md:grid-cols-2 md:gap-2 mx-auto">
-    {launches.map(launch => {
+    {launches.map((launch, id) => {
         const {flight_number, details, mission_name, launch_date_local, links, rocket, launch_site} = launch;
 
       return (
-        <li className="max-w-sm max-h-100 flex flex-auto flex-col p-2 rounded overflow-hidden shadow-lg bg-gray-700 bg-opacity-50 text-white">
-            {links.video_link
-                ? <iframe
-                className="h-48"
-            src={links.video_link && links.video_link.replace('watch?v=', 'embed/')}
-            title={mission_name}
-            frameBorder={0}
-            allow={"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"}
-            allowFullScreen={true}
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-          />
-          : <p>Sorry, no Youtube video is available</p>
-            }
-            
-            
-        <div className="flex flex-col p-4 text-gray-100">
-            <div className="flex flex-row justify-between items-start space-x-8 pb-2">
-                <h1 className="font-bold text-lg">Rocket: {rocket.rocket_name}</h1>
+        <li className="max-w-sm max-h-100 flex flex-col p-2 rounded overflow-hidden shadow-lg bg-gray-700 bg-opacity-50 text-white" key={id}>
+        <div className="flex flex-col h-full p-4 text-gray-100">
+            <div className="flex flex-row justify-between items-start space-x-8 pb-4">
+                <h1 className="tracking-wide font-bold text-xl">{rocket.rocket_name}</h1>
                   
-              <strong className="text-lg">Flight # {flight_number}</strong>
+              <strong className="flight-num tracking-wide text-xl">Flight # {flight_number}</strong>
               
             </div>
              
@@ -66,10 +51,14 @@ const PastLaunches = () => {
               <p><strong>Launch Date: </strong>{moment(launch_date_local).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
 
               {details
-                ? <p className="pt-2">{details}</p>
+                ? <p className="text-sm pt-2">{details}</p>
           : <em className="text-sm pt-2">I'm sorry, no details are available for this launch</em>
             }
             
+            <div className="flex items-center mt-4">
+            <a href={links.wikipedia} className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pr-8">Learn More</a>
+            <a href={links.video_link}  className="font-bold font-mono border-4 gradient blue p-2">View Launch</a>
+            </div>
       </div>
         </li>
       );

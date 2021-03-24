@@ -1,7 +1,9 @@
-
+[build]
+  functions = "/root"
+  
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
-  for = "/*"
+  for = "https://www.youtube.com/"
     [headers.values]
     Access-Control-Allow-Origin = "*"
     cache-control = '''

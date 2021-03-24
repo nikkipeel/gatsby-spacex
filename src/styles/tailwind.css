@@ -2,6 +2,44 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
+
+:root {
+    --blue-gradient: linear-gradient(to top right, #3B82F6, #93C5FD);
+    --blue: #3B82F6;
+}
+
 main, div, ul {
     overflow-x: hidden;
 }
+
+div h1, .flight-num {
+    text-shadow: -2px 0px 0px #2563EB;
+}
+
+a {
+    cursor: pointer;
+}
+
+.gradient {
+    border: 6px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+  }
+  
+.blue {
+     background: var(--blue-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-image-source: var(--blue-gradient);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+.blue:hover, .blue:focus {
+    border: 3px solid #fff;
+    background: var(--blue-gradient);
+    -webkit-text-fill-color: #fff;
+    text-decoration: underline;
+  }
+  
