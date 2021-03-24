@@ -30,7 +30,7 @@ const PastLaunches = () => {
     </div>
 
 
-    <ul className="grid py-2 lg:grid-cols-3 md:grid-cols-2 md:gap-2 mx-auto">
+    <ul className="grid py-2 lg:grid-cols-3 md:grid-cols-2 gap-2 mx-auto">
     {launches.map((launch, id) => {
         const {flight_number, details, mission_name, launch_date_local, links, rocket, launch_site} = launch;
 
