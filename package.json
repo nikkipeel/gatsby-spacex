@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": false,
   "description": "Gatsby Space",
-  "author": "American Reading Company",
+  "author": "Nikki Peel",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -14,7 +14,7 @@
   "dependencies": {
     "gatsby": "^3.1.2",
     "gatsby-plugin-manifest": "^3.1.0",
-    "gatsby-plugin-postcss": "^2.3.11",
+    "gatsby-plugin-postcss": "^4.1.0",
     "moment": "^2.29.1",
     "postcss-import": "^12.0.1",
     "react": "^16.13.1",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
+    "postcss": "^8.2.8",
     "prettier": "^2.2.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
   }
