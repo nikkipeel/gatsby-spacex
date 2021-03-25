@@ -15,7 +15,13 @@ const Rockets = () => {
     }, [])
   
     if (rockets === null) {
-      return <p>Loading rockets ...</p>
+      return <div class="spinner-box">
+      <div class="pulse-container">  
+        <div class="pulse-bubble pulse-bubble-1"></div>
+        <div class="pulse-bubble pulse-bubble-2"></div>
+        <div class="pulse-bubble pulse-bubble-3"></div>
+      </div>
+    </div>
     }
 
         return (

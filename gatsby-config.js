@@ -2,19 +2,19 @@ module.exports = {
 	siteMetadata: {
 		title: 'Gatsby Space'
 	},
-	plugins: ['gatsby-plugin-postcss'],
-	proxy: [
+	plugins: [
+		'gatsby-plugin-postcss',
 		{
-		  prefix: "/api",
-		  url: "https://api.spacexdata.com/v4/launches/next",
-		},
-		{
-		  prefix: "/api2",
-		  url: "https://api.spacexdata.com/v3/launches/past?limit=50&sort=flight_number&order=desc",
-		},
-		{
-			prefix: "/api3",
-			url: "https://api.spacexdata.com/v3/launches/rockets",
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+			  name: `SpaceX API Data`,
+			  short_name: `spacex`,
+			  description: `This webpage displays data about SpaceX rockets and launches`,
+			  start_url: `/`,
+			  background_color: `#663399`,
+			  theme_color: `#3B82F6`,
+			  icon: `src/images/rocket-gradient.svg`, // This path is relative to the root of the site.
+			},
 		  },
-	  ],
+	],
 }
