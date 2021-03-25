@@ -1,5 +1,7 @@
 import React, { useState, useEffect }  from 'react'
 import moment from "moment"
+import Countdown from 'react-countdown';
+ 
 import "../styles/tailwind.css"
 
 const getSpaceXLaunchNext = () => {
@@ -16,7 +18,7 @@ const NextLaunch = () => {
   }, [])
 
   if (launch === null) {
-    return <div class="spinner-box">
+    return <div class="spinner-box mx-auto">
     <div class="pulse-container">  
       <div class="pulse-bubble pulse-bubble-1"></div>
       <div class="pulse-bubble pulse-bubble-2"></div>
@@ -31,11 +33,12 @@ const NextLaunch = () => {
         <h1 className="text-white text-2xl font-mono font-bold border-b-8 border-blue-600 mr-2" style={{lineHeight: .45}}>Next Launch </h1>
         </div>
       <img src={launch.links.patch.small} alt={launch.name} style={{ maxWidth: '150px'}}/>
-      <h2 className="text-xl font-bold">{launch.name}</h2>
+      <h1 className="text-xl font-bold tracking-wide">{launch.name}</h1>
       <strong>Flight Number {launch.flight_number}</strong>
       <p class="w-44 text-center"><strong>Launch Date: </strong>{moment(launch.date_local).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
 
-      <a className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pt-2 pb-4" href={launch.links.wikipedia}>Learn More </a>
+      <Countdown date={launch.date_local} className="text-3xl tracking-widest font-bold bg-clip-text text-transparent bg-gradient-to-t from-blue-600 via-blue-400 to-blue-200 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pt-2 pb-4"/>
+
     </div>
   )
 }
