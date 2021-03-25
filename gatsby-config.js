@@ -1,7 +1,10 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Gatsby Space'
-	},
+		title: `SpaceX API Data`,
+		description: `This webpage displays data about SpaceX rockets and launches`,
+		author: `Nikki Peel`,
+		siteUrl: `https://gatsby-spacex-data.netlify.app`,
+	  },
 	plugins: [
 		'gatsby-plugin-postcss',
 		{
