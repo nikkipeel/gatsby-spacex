@@ -12,7 +12,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^2.32.8",
+    "gatsby": "^3.1.2",
     "gatsby-plugin-manifest": "^3.1.0",
     "gatsby-plugin-postcss": "^2.3.11",
     "moment": "^2.29.1",

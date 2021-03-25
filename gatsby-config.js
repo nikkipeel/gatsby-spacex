@@ -11,9 +11,9 @@ module.exports = {
 			  short_name: `spacex`,
 			  description: `This webpage displays data about SpaceX rockets and launches`,
 			  start_url: `/`,
-			  background_color: `#663399`,
+			  background_color: `#1F2937`,
 			  theme_color: `#3B82F6`,
-			  icon: `src/images/rocket-gradient-square.svg`, // This path is relative to the root of the site.
+			  icon: `src/images/rocket-square.svg`, // This path is relative to the root of the site.
 			},
 		  },
 	],
