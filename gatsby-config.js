@@ -13,7 +13,7 @@ module.exports = {
 			  start_url: `/`,
 			  background_color: `#663399`,
 			  theme_color: `#3B82F6`,
-			  icon: `src/images/rocket-gradient.svg`, // This path is relative to the root of the site.
+			  icon: `src/images/rocket-gradient-square.svg`, // This path is relative to the root of the site.
 			},
 		  },
 	],
