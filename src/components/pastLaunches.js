@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react'
 import moment from "moment"
 import "../styles/tailwind.css"
+import Loader from "../components/loader"
 
 const getPastLaunches = () => {
   return fetch('https://api.spacexdata.com/v3/launches/past?limit=50&sort=flight_number&order=desc')
@@ -17,13 +18,7 @@ const PastLaunches = () => {
   }, [])
 
   if (launches === null) {
-    return <div class="spinner-box">
-    <div class="pulse-container">  
-      <div class="pulse-bubble pulse-bubble-1"></div>
-      <div class="pulse-bubble pulse-bubble-2"></div>
-      <div class="pulse-bubble pulse-bubble-3"></div>
-    </div>
-  </div>
+    return <Loader></Loader>
   }
 
   return (
@@ -41,7 +36,7 @@ const PastLaunches = () => {
         const {flight_number, details, mission_name, launch_date_local, links, rocket, launch_site} = launch;
 
       return (
-        <li className="max-w-sm max-h-100 flex flex-col p-2 rounded overflow-hidden shadow-lg bg-gray-700 bg-opacity-50 text-white" key={id}>
+        <li className="max-w-sm h-full flex flex-col justify-center items-center p-2 rounded overflow-hidden shadow-lg bg-gray-700 bg-opacity-50 text-white" key={id}>
         <div className="flex flex-col h-full p-4 text-gray-100">
             <div className="flex flex-row justify-between items-start space-x-8 pb-4">
                 <h1 className="tracking-wide font-bold text-xl">{rocket.rocket_name}</h1>

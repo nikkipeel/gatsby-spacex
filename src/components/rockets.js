@@ -1,5 +1,6 @@
 import React, {useState, useEffect}  from 'react'
 import "../styles/tailwind.css"
+import Loader from "../components/loader"
 
 const getRockets = () => {
   return fetch('https://api.spacexdata.com/v3/rockets')
@@ -15,13 +16,7 @@ const Rockets = () => {
     }, [])
   
     if (rockets === null) {
-      return <div class="spinner-box">
-      <div class="pulse-container">  
-        <div class="pulse-bubble pulse-bubble-1"></div>
-        <div class="pulse-bubble pulse-bubble-2"></div>
-        <div class="pulse-bubble pulse-bubble-3"></div>
-      </div>
-    </div>
+      return <Loader></Loader>
     }
 
         return (

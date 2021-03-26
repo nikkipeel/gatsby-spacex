@@ -1,8 +1,8 @@
 import React, { useState, useEffect }  from 'react'
 import moment from "moment"
 import Countdown from 'react-countdown';
- 
 import "../styles/tailwind.css"
+import Loader from "../components/loader"
 
 const getSpaceXLaunchNext = () => {
   return fetch('https://api.spacexdata.com/v4/launches/next')
@@ -18,13 +18,7 @@ const NextLaunch = () => {
   }, [])
 
   if (launch === null) {
-    return <div class="spinner-box mx-auto">
-    <div class="pulse-container">  
-      <div class="pulse-bubble pulse-bubble-1"></div>
-      <div class="pulse-bubble pulse-bubble-2"></div>
-      <div class="pulse-bubble pulse-bubble-3"></div>
-    </div>
-  </div>
+    return <Loader></Loader>
   }
 
   return (
