@@ -7,8 +7,15 @@ main, div, ul {
     overflow-x: hidden;
 }
 
-div h1, .flight-num {
+ .flight-num {
     text-shadow: -2px 0px 0px #2563EB;
+}
+.mission-name {
+  text-shadow: -2px 0px 0px rgb(96 165 250);
+}
+
+h1 {
+  font-size: 2.25rem;
 }
 
 a {

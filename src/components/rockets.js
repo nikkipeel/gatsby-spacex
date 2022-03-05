@@ -25,19 +25,23 @@ const Rockets = () => {
                 <h1 className="text-white text-2xl font-mono font-bold border-b-8 border-blue-600 mr-2" style={{lineHeight: .45}}>Rockets  </h1>
             </div>
         
-            <ul className="grid p-2 lg:grid-cols-4 md:grid-cols-2 gap-2 overflow-x-hidden">
+            <ul className="grid lg:grid-cols-3 md:grid-cols-2 gap-2 overflow-x-hidden mx-auto">
             {rockets.map((rocket, id) => {
             const {rocket_name, mass, cost_per_launch, success_rate_pct, description, wikipedia} = rocket;
         
               return (
-                <li className="max-w-sm h-full flex flex-col justify-center items-center p-2 rounded overflow-hidden shadow-lg bg-gray-700 bg-opacity-50 text-white my-4 mx-auto" key={id}>
-                       <div className="flex flex-col p-4">
+                <li className="max-w-sm flex flex-col justify-start items-center p-2 my-4 mx-auto" key={id}>
+                       <div className="flex flex-col p-4 rounded overflow-hidden shadow-lg bg-gray-700 bg-opacity-25 text-white leading-normal">
                         <h1 className="tracking-wide font-bold text-xl pb-4">{rocket_name}</h1>
                         <p><strong>Mass: </strong>{mass.kg} <em>kg</em> / {mass.lb} <em>lb</em> </p>
                         <p><strong>Cost per launch: </strong>${cost_per_launch}</p>
                         <p><strong>Success rate: </strong>{success_rate_pct}%</p>
-                        <p className="text-sm py-4">{description}</p>
-                        <a className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 tracking-wide transition duration-500 ease-in-out hover:text-blue-300 hover:underline" href={wikipedia}>Learn More </a>   
+                        <p className="text-base leading-relaxed py-4">{description}</p>
+                        <a className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 tracking-wide transition duration-500 ease-in-out hover:text-blue-300 hover:underline" href={wikipedia}>Learn More 
+                        <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+</svg>
+                        </a>   
                       
                     </div>
 

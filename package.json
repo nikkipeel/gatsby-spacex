@@ -1,6 +1,6 @@
 {
   "name": "gatsby-space",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": false,
   "description": "Gatsby Space",
   "author": "Nikki Peel",
@@ -12,18 +12,18 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^3.1.2",
-    "gatsby-plugin-manifest": "^3.1.0",
-    "gatsby-plugin-postcss": "^4.1.0",
+    "gatsby": "^4.7.2",
+    "gatsby-plugin-manifest": "^4.9.0",
+    "gatsby-plugin-postcss": "^5.9.0",
     "moment": "^2.29.1",
-    "react": "^16.13.1",
-    "react-countdown": "^2.3.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.2",
+    "react-countdown": "^2.3.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "postcss": "^8.2.8",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.7",
     "prettier": "^2.2.1",
-    "tailwindcss": "^2.0.4"
+    "tailwindcss": "^3.0.23"
   }
 }
