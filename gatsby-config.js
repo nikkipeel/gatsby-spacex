@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
-		title: `SpaceX API Data`,
-		description: `This webpage displays data about SpaceX rockets and launches`,
+		title: `SpaceX Data`,
+		description: `Information about rockets and upcoming launches from SpaceX`,
 		author: `Nikki Peel`
 	  },
 	plugins: [
@@ -9,9 +9,9 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-			  name: `SpaceX API Data`,
+			  name: `SpaceX Data`,
 			  short_name: `spacex`,
-			  description: `This webpage displays data about SpaceX rockets and launches`,
+			  description: `Information about rockets and upcoming launches from SpaceX`,
 			  start_url: `/`,
 			  background_color: `#1F2937`,
 			  theme_color: `#3B82F6`,

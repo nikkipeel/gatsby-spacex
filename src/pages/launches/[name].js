@@ -1,11 +1,12 @@
 import * as React from "react"
 import moment from "moment"
-
+import Seo from "../../components/seo"
 import "../../styles/tailwind.css"
 
 const Launch = ({ location, name}) => (
- 
+
   <main className="h-screen w-full bg-gray-900 text-white mx-auto">
+    <Seo title={name} />
 									{name && (
 										<>
                     <div className="flex flex-col md:w-3/4 lg:w-1/2 p-12 mx-auto text-base" key={name}>
@@ -24,9 +25,11 @@ const Launch = ({ location, name}) => (
 
 
                   {location.state.details ?
+                  <>
                   <p className="my-2">{location.state.details}</p>
+                  </>
                   : 
-                  <p className="my-2">No details are available for this launch</p>
+                  ''
                   }
 
 <a href={location.state.links.wikipedia} className="my-2 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pr-8">Learn More</a>

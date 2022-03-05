@@ -49,7 +49,7 @@ const PastLaunches = () => {
     {launches.sort(function (a, b) {
   return b.flight_number - a.flight_number;
 }).limit(count).map((launch, id) => {
-        const {flight_number, name, date_local, links, rocket} = launch;
+        const {flight_number, name, date_local, links, rocket, details} = launch;
 
       return (
         <li className="max-w-sm flex h-full flex-col justify-start p-2 overflow-hidden" key={id}>
@@ -64,8 +64,8 @@ const PastLaunches = () => {
               <p><strong>Mission: </strong>{name}</p>
               <p><strong>Launch Date: </strong>{moment(date_local).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
             
-            <div className="flex items-center mt-4">
-            <a href={links.wikipedia} className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pr-6">Learn More
+            <div className="flex justify-between items-center mt-4">
+            <a href={links.wikipedia} className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-54">Learn More
             <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 </svg>
@@ -73,15 +73,15 @@ const PastLaunches = () => {
             {links.video_link && 
               <a href={links.video_link}  className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline p-2">View Launch</a>
             }
+            {details &&
             <Link to={`/launches/${name}`}
-													className="event-info"
 													state={{
                             name: name,
                             flight_number: flight_number, 
                             date_local: date_local,
                              links: links, rocket: rocket
-													}} className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pr-8">View Details</Link>
-
+													}} className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48">View Details</Link>
+                        }
             </div>
       </div>
         </li>

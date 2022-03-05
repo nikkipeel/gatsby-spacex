@@ -3,11 +3,13 @@ import NextLaunch from "../components/nextLaunch"
 import Rockets from "../components/rockets"
 import PastLaunches from "../components/pastLaunches"
 import Info from "../components/info"
+import Seo from "../components/seo"
 
 import "../styles/tailwind.css"
 const IndexPage = () => {
 	return (
 		<main className="bg-gray-900 w-screen h-100 flex flex-col text-white overflow-x-hidden">
+			<Seo title="SpaceX API Data" />
 			<div className="mx-auto mt-4 mb-4 pl-10 w-80">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="394.847 1264.878 2478.014 305.642">
 					<path
