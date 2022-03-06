@@ -24,12 +24,8 @@ const Launch = ({ location, name}) => (
                   </div>
 
 
-                  {location.state.details ?
-                  <>
+                  {location.state.details &&
                   <p className="my-2">{location.state.details}</p>
-                  </>
-                  : 
-                  ''
                   }
 
 <a href={location.state.links.wikipedia} className="my-2 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline pr-8">Learn More</a>
