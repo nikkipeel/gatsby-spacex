@@ -37,12 +37,14 @@ const Rockets = () => {
                         <p><strong>Cost per launch: </strong>${cost_per_launch}</p>
                         <p><strong>Success rate: </strong>{success_rate_pct}%</p>
                         <p className="text-base leading-relaxed py-4">{description}</p>
-                        <a className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 tracking-wide transition duration-500 ease-in-out hover:text-blue-300 hover:underline" href={wikipedia}>Learn More 
-                        <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-</svg>
-                        </a>   
-                      
+                        <div className="flex items-center external-links">
+                          <a href={wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54">
+                          <p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">Learn More</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          </a>
+                        </div>  
                     </div>
 
                       

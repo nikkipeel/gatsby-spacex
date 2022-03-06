@@ -14,6 +14,17 @@ main, div, ul {
   text-shadow: -2px 0px 0px rgb(96 165 250);
 }
 
+div.launch-video iframe{
+  @media (max-width: 468px) {
+    width: 300px;
+  }
+}
+
+.external-links a:hover p, .external-links a:hover svg {
+  color: rgb(147 197 253);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 h1 {
   font-size: 2.25rem;
 }

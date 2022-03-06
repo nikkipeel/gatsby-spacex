@@ -1,13 +1,16 @@
 import React from 'react';
 import NextLaunch from "../components/nextLaunch"
+import LaunchVideo from "../components/launchVideo"
 import Rockets from "../components/rockets"
 import PastLaunches from "../components/pastLaunches"
 import Info from "../components/info"
+import Footer from "../components/footer"
 import Seo from "../components/seo"
 
 import "../styles/tailwind.css"
 const IndexPage = () => {
 	return (
+		<>
 		<main className="bg-gray-900 w-screen h-100 flex flex-col text-white overflow-x-hidden">
 			<Seo title="SpaceX API Data" />
 			<div className="mx-auto mt-4 mb-4 pl-10 w-80">
@@ -21,11 +24,12 @@ const IndexPage = () => {
 			</div>
 			<Info></Info>
 			<NextLaunch></NextLaunch>
+			<LaunchVideo></LaunchVideo>
 			<Rockets></Rockets>
 			<PastLaunches></PastLaunches>
 		</main>
-
-
+		<Footer></Footer>
+</>
 	)
 }
 

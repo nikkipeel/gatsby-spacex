@@ -1,5 +1,8 @@
 import React, { useState, useEffect }  from 'react'
 import {Link} from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+
 import moment from "moment"
 import "../styles/tailwind.css"
 import Loader from "../components/loader"
@@ -64,16 +67,7 @@ const PastLaunches = () => {
               <p><strong>Mission: </strong>{name}</p>
               <p><strong>Launch Date: </strong>{moment(date_local).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
             
-            <div className="flex justify-between items-center mt-4">
-            <a href={links.wikipedia} className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-54">Learn More
-            <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-</svg>
-            </a>
-            {links.video_link && 
-              <a href={links.video_link}  className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline p-2">View Launch</a>
-            }
-            {details &&
+              {details &&
             <Link to={`/launches/${name}`}
 													state={{
                             name: name,
@@ -81,8 +75,27 @@ const PastLaunches = () => {
                             date_local: date_local,
                              links: links, rocket: rocket,
                              details: details
-													}} className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48">View Details</Link>
+													}} className="mt-4 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48">View Details</Link>
                         }
+            <div className="flex justify-between items-center mt-2">
+
+            <div className="flex items-center external-links">
+              <a href={links.wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54">
+                <p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">Learn More</p>
+
+              <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              </a>
+            </div>
+            {links.webcast && 
+            <div className="flex items-center external-links">
+              <a href={links.webcast} className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out p-2">
+                <p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">Watch on </p>
+                <FontAwesomeIcon aria-label="YouTube" className="h-6 w-6 ml-2 text-blue-400" icon={faYoutube} />
+              </a>
+            </div>
+            }
             </div>
       </div>
         </li>
