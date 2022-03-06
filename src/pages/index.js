@@ -4,6 +4,7 @@ import LaunchVideo from "../components/launchVideo"
 import Rockets from "../components/rockets"
 import PastLaunches from "../components/pastLaunches"
 import Info from "../components/info"
+import ScrollToTop from "../components/scrollToTop"
 import Footer from "../components/footer"
 import Seo from "../components/seo"
 
@@ -28,6 +29,7 @@ const IndexPage = () => {
 			<Rockets></Rockets>
 			<PastLaunches></PastLaunches>
 		</main>
+		<ScrollToTop showBelow={250}></ScrollToTop>
 		<Footer></Footer>
 </>
 	)

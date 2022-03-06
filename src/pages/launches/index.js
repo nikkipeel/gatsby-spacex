@@ -4,6 +4,8 @@ import moment from "moment"
 import "../../styles/tailwind.css"
 import Seo from "../../components/seo"
 import Loader from "../../components/loader"
+import ScrollToTop from "../../components/scrollToTop"
+import Footer from "../../components/footer"
 
 const getPastLaunches = () => {
   return fetch('https://api.spacexdata.com/v5/launches/past?&sort=date_local&order=desc')
@@ -36,7 +38,8 @@ const Launches = () => {
   }
 
   return (
-    <main className="h-screen w-full bg-gray-900 text-white p-12">
+    <>
+    <main className="h-full w-full bg-gray-900 text-white p-12">
     <Seo title="Launches" />
     <h1 className="mission-name tracking-wide font-bold text-2xl my-4 flex justify-center my-6 mx-auto">Launches</h1>
 
@@ -94,7 +97,9 @@ const Launches = () => {
 <button onClick={addMore} aria-label="Load More" className="px-4 py-2 font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 font-bold uppercase tracking-wide text-lg w-36 transition duration-500 ease-in-out hover:text-blue-300 border-2 border-transparent hover:border-blue-300 my-12 mx-auto focus:border-blue-300 transform hover:scale-105 flex justify-center">Load More</button>
 : ''}
 </main>
-
+<ScrollToTop showBelow={250}></ScrollToTop>
+<Footer></Footer>
+</>
   )
 }
 

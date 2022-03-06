@@ -6,3 +6,5 @@
 #### Features
 - Built with Gatsby using React hooks to fetch data and Tailwind for styling
 
+##### New
+- 

@@ -1,10 +1,12 @@
 import * as React from "react"
 import moment from "moment"
 import Seo from "../../components/seo"
+import ScrollToTop from "../../components/scrollToTop"
+import Footer from "../../components/footer"
 import "../../styles/tailwind.css"
 
 const Launch = ({ location, name}) => (
-
+<>
   <main className="h-screen w-full bg-gray-900 text-white mx-auto">
     <Seo title={name} />
 									{name && (
@@ -37,5 +39,8 @@ const Launch = ({ location, name}) => (
 									)}
           
   </main>
+  <ScrollToTop showBelow={250}></ScrollToTop>
+  <Footer></Footer>
+  </>
 )
 export default Launch
