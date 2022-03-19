@@ -22,16 +22,16 @@ function Footer() {
 					</div>
 				</div>
 				<div className="flex lg:justify-end w-full h-full my-4 overflow-hidden">
-					<a aria-label="linked in" href="https://www.linkedin.com/in/nikkipeel" className="text-gray-100 pr-4 hover:scale-105">
+					<a aria-label="linked in" href="https://www.linkedin.com/in/nikkipeel" className="text-gray-100 pr-4 transition duration-500 ease-in-out hover:scale-105">
 						<FontAwesomeIcon className="w-6 h-6" icon={faLinkedin} />
 					</a>
-					<a aria-label="github" href="https://www.github.com/nikkipeel" className="text-gray-100 pr-4 hover:scale-105">
+					<a aria-label="github" href="https://www.github.com/nikkipeel" className="text-gray-100 pr-4 transition duration-500 ease-in-out hover:scale-105">
 						<FontAwesomeIcon className="w-6 h-6" icon={faGithub} />
 					</a>
-					<a aria-label="codepen" href="https://www.codepen.io/nikki-peel" className="text-gray-100 pr-4 hover:scale-105">
+					<a aria-label="codepen" href="https://www.codepen.io/nikki-peel" className="text-gray-100 pr-4 transition duration-500 ease-in-out hover:scale-105">
 						<FontAwesomeIcon className="w-6 h-6" icon={faCodepen} />
 					</a>
-					<a aria-label="blog" href="https://nikkipeel.netlify.app" className="text-gray-100 pr-4 hover:scale-105">
+					<a aria-label="blog" href="https://nikkipeel.netlify.app" className="text-gray-100 pr-4 transition duration-500 ease-in-out hover:scale-105">
 						<FontAwesomeIcon className="w-6 h-6" icon={faExternalLinkAlt} />
 					</a>
 				</div>

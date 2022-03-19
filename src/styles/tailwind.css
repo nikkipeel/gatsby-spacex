@@ -1,80 +1,89 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-
-main, div, ul {
-    overflow-x: hidden;
+main,
+div,
+ul {
+	overflow-x: hidden;
 }
 
- .flight-num {
-    text-shadow: -2px 0px 0px #2563EB;
+a:hover {
+	color: rgb(147 197 253);
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.flight-num {
+	text-shadow: -2px 0px 0px #2563eb;
 }
 .mission-name {
-  text-shadow: -2px 0px 0px rgb(96 165 250);
+	text-shadow: -2px 0px 0px rgb(96 165 250);
 }
 
-div.launch-video iframe{
-  @media (max-width: 468px) {
-    width: 300px;
-  }
+div.launch-video iframe {
+	@media (max-width: 468px) {
+		width: 300px;
+	}
 }
 
-.external-links a:hover p, .external-links a:hover svg {
-  color: rgb(147 197 253);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.external-links a:hover p,
+.external-links a:hover svg,
+.external-link:hover p,
+.external-link:hover svg {
+	color: rgb(147 197 253);
+	text-decoration: underline;
+	text-underline-offset: 4px;
 }
 h1 {
-  font-size: 2.25rem;
+	font-size: 2.25rem;
 }
 
 a {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 /* Loading Animation */
 .spinner-box {
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-  }
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+}
 
-  .pulse-container {
-    width: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .pulse-bubble {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: linear-gradient(to left, #5433FF, #20BDFF); 
-  }
-  
-  .pulse-bubble-1 {
-      animation: pulse .4s ease 0s infinite alternate;
-  }
-  .pulse-bubble-2 {
-      animation: pulse .4s ease .2s infinite alternate;
-  }
-  .pulse-bubble-3 {
-      animation: pulse .4s ease .4s infinite alternate;
-  }
+.pulse-container {
+	width: 120px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pulse-bubble {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: linear-gradient(to left, #5433ff, #20bdff);
+}
+
+.pulse-bubble-1 {
+	animation: pulse 0.4s ease 0s infinite alternate;
+}
+.pulse-bubble-2 {
+	animation: pulse 0.4s ease 0.2s infinite alternate;
+}
+.pulse-bubble-3 {
+	animation: pulse 0.4s ease 0.4s infinite alternate;
+}
 
 @keyframes pulse {
-    from {
-      opacity: 1;
-      transform: scale(1);
-    }
-    to {
-      opacity: .25;
-      transform: scale(.75);
-    }
-  }
-  
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+	to {
+		opacity: 0.25;
+		transform: scale(0.75);
+	}
+}

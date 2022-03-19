@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import moment from 'moment'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import '../../styles/tailwind.css'
 import Seo from '../../components/seo'
 import Loader from '../../components/loader'
@@ -30,8 +32,9 @@ const Launches = () => {
 			}
 		})
 	}
-
+	//limit function,internally we have just used filter function and //used index of its callback function
 	Array.prototype.limit = limit
+	//add it to Array.prototype ,so that any array in JS,can invoke it
 
 	const addMore = () => {
 		// function that will make count show next 12 items
@@ -40,11 +43,18 @@ const Launches = () => {
 
 	return (
 		<>
-			<main className="h-full w-full bg-gray-900 text-white p-12">
-				<Seo title="Launches" />
-				<h1 className="mission-name tracking-wide font-bold text-2xl my-4 flex justify-center my-6 mx-auto">Launches</h1>
+			<Seo title="Launches" />
+			<main className="h-screen w-full bg-gray-900 text-white mx-auto">
+				<div className="flex flex-row justify-center items-end mx-auto mt-20 mb-4 overflow-x-visible">
+					<h1 className="text-white text-2xl font-mono font-bold border-b-8 border-blue-600 mr-2" style={{ lineHeight: 0.45 }}>
+						Launches
+					</h1>
+					<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+					</svg>
+				</div>
 
-				<ul className="grid py-2 xl:grid-cols-3 md:grid-cols-2 lg:w-3/4 gap-2 mx-auto my-12">
+				<ul className="grid py-2 lg:grid-cols-3 md:grid-cols-2 gap-2 mx-auto lg:w-3/4">
 					{launches
 						.sort(function (a, b) {
 							return b.flight_number - a.flight_number
@@ -54,7 +64,7 @@ const Launches = () => {
 							const { flight_number, name, date_local, links, rocket, details } = launch
 
 							return (
-								<li className="max-w-sm flex h-full flex-col justify-start xl:p-2 overflow-hidden" key={id}>
+								<li className="max-w-sm flex h-full flex-col justify-start p-2 overflow-hidden" key={id}>
 									<div className="flex flex-col h-auto p-4 text-gray-100 shadow-lg bg-gray-700 bg-opacity-25 text-white leading-normal rounded">
 										<div className="flex flex-row justify-between items-start space-x-8 pb-4">
 											<h1 className="tracking-wide font-bold text-xl">{rocket.rocket_name}</h1>
@@ -66,56 +76,58 @@ const Launches = () => {
 											<strong>Mission: </strong>
 											{name}
 										</p>
-
 										<p>
 											<strong>Launch Date: </strong>
 											{moment(date_local).format('dddd, MMMM Do YYYY, h:mm:ss a')}
 										</p>
 
-										<div className="flex justify-between items-center mt-4">
-											<a
-												href={links.wikipedia}
-												className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-54"
+										{details && (
+											<Link
+												to={`/launches/${name}`}
+												state={{
+													name: name
+												}}
+												key={name}
+												className="mt-4 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48"
 											>
-												Learn More
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													className="ml-2 h-6 w-6"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-													strokeWidth={2}
-												>
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-													/>
-												</svg>
-											</a>
-											{links.video_link && (
-												<a
-													href={links.video_link}
-													className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline"
-												>
-													View Launch
+												View Details
+											</Link>
+										)}
+										<div className="flex justify-between items-center mt-2">
+											<div className="flex items-center external-links">
+												<a href={links.wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54">
+													<p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">
+														Learn More
+													</p>
+
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														className="ml-2 h-6 w-6 text-blue-400"
+														fill="none"
+														viewBox="0 0 24 24"
+														stroke="currentColor"
+														strokeWidth={2}
+													>
+														<path
+															strokeLinecap="round"
+															strokeLinejoin="round"
+															d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+														/>
+													</svg>
 												</a>
-											)}
-											{details && (
-												<Link
-													to={`/launches/${name}`}
-													state={{
-														name: name,
-														flight_number: flight_number,
-														date_local: date_local,
-														links: links,
-														rocket: rocket,
-														details: details
-													}}
-													className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48"
-												>
-													View Details
-												</Link>
+											</div>
+											{links.webcast && (
+												<div className="flex items-center external-links">
+													<a
+														href={links.webcast}
+														className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out p-2"
+													>
+														<p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">
+															Watch on{' '}
+														</p>
+														<FontAwesomeIcon aria-label="YouTube" className="h-6 w-6 ml-2 text-blue-400" icon={faYoutube} />
+													</a>
+												</div>
 											)}
 										</div>
 									</div>
@@ -128,15 +140,15 @@ const Launches = () => {
 					<button
 						onClick={addMore}
 						aria-label="Load More"
-						className="px-4 py-2 font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 font-bold uppercase tracking-wide text-lg w-36 transition duration-500 ease-in-out hover:text-blue-300 border-2 border-transparent hover:border-blue-300 my-12 mx-auto focus:border-blue-300 transform hover:scale-105 flex justify-center"
+						className="flex mx-auto px-4 py-2 font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 font-bold uppercase tracking-wide text-lg w-36 transition duration-500 ease-in-out hover:text-blue-300 border-2 border-transparent hover:border-blue-300 my-12 mx-auto focus:border-blue-300 transform hover:scale-105 mb-48"
 					>
 						Load More
 					</button>
 				) : (
 					''
 				)}
+				<ScrollToTop></ScrollToTop>
 			</main>
-			<ScrollToTop showBelow={250}></ScrollToTop>
 			<Footer></Footer>
 		</>
 	)

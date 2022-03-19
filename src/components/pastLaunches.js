@@ -81,13 +81,9 @@ const PastLaunches = () => {
 										<Link
 											to={`/launches/${name}`}
 											state={{
-												name: name,
-												flight_number: flight_number,
-												date_local: date_local,
-												links: links,
-												rocket: rocket,
-												details: details
+												name: name
 											}}
+											key={name}
 											className="mt-4 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48"
 										>
 											View Details
