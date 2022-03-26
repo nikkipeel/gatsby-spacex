@@ -18,7 +18,7 @@ const Info = () => {
 	}
 
 	return (
-		<div className="flex flex-col justify-center items-center mx-auto w-full xl:w-1/3 mb-8">
+		<div className="flex flex-col justify-center items-center mx-auto w-full md:w-1/2 xl:w-1/3 mb-8">
 			<em className="text-sm text-white text-center px-4">{info.summary} </em>
 			<a
 				href={info.links.website}
