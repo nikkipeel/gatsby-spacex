@@ -5,11 +5,12 @@ import '../../styles/tailwind.css'
 import Seo from '../../components/seo'
 import ScrollToTop from '../../components/scrollToTop'
 import Footer from '../../components/footer'
+import Loader from '../../components/loader'
 
 const LaunchPage = ({ serverData, location, launchName }) => {
 	return (
 		<>
-			{serverData && (
+			{serverData ? (
 				<>
 					<main className="h-screen w-full bg-gray-900 text-white mx-auto">
 						{serverData.map((launch) => {
@@ -22,7 +23,7 @@ const LaunchPage = ({ serverData, location, launchName }) => {
 											<Seo title={name} />
 											<Link
 												to="/"
-												className="flex items-center py-8 px-4 lg:py-12 lg:px-24 md:w-3/4 mx-auto font-mono text-large transition ease-in-out duration-500 hover:underline hover:underline-offset-4 hover:text-blue-300"
+												className="flex items-center py-8 px-4 lg:py-12 lg:px-24 md:w-3/4 mx-auto font-mono text-lg transition ease-in-out duration-500 hover:underline hover:underline-offset-4 hover:text-blue-300"
 											>
 												<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-4" viewBox="0 0 20 20" fill="currentColor">
 													<path
@@ -48,7 +49,7 @@ const LaunchPage = ({ serverData, location, launchName }) => {
 													<p className="text-xl">{moment(date_local).format('dddd, MMMM Do YYYY, h:mm:ss a')}</p>
 												</div>
 
-												{details && <p className="my-4 leading-8 text-xl">{details}</p>}
+												{details && <p className="my-4 leading-8 text-lg">{details}</p>}
 
 												<a href={links.wikipedia} className="external-link flex items-center mt-4 mb-2 transition duration-500 ease-in-out">
 													<p className="font-bold text-xl font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline">
@@ -87,6 +88,10 @@ const LaunchPage = ({ serverData, location, launchName }) => {
 					<ScrollToTop showBelow={250}></ScrollToTop>
 					<Footer></Footer>
 				</>
+			) : (
+				<main className="h-screen w-full bg-gray-900 text-white mx-auto">
+					<Loader></Loader>
+				</main>
 			)}
 		</>
 	)

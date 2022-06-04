@@ -33,20 +33,20 @@ const Rockets = () => {
 						<li className="max-w-sm flex flex-col justify-start items-center p-2 my-4 mx-auto" key={id}>
 							<div className="flex flex-col p-4 rounded overflow-hidden shadow-lg bg-gray-700 bg-opacity-25 text-white leading-normal">
 								<h1 className="tracking-wide font-bold text-xl pb-4">{rocket_name}</h1>
-								<p>
+								<p className="text-lg">
 									<strong>Mass: </strong>
 									{mass.kg} <em>kg</em> / {mass.lb} <em>lb</em>{' '}
 								</p>
-								<p>
+								<p className="text-lg">
 									<strong>Cost per launch: </strong>${cost_per_launch}
 								</p>
-								<p>
+								<p className="text-lg">
 									<strong>Success rate: </strong>
 									{success_rate_pct}%
 								</p>
-								<p className="text-base leading-relaxed py-4">{description}</p>
+								<p className="text-lg leading-relaxed py-4">{description}</p>
 								<div className="flex items-center external-links">
-									<a href={wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54">
+									<a href={wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54 text-lg">
 										<p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">Learn More</p>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"

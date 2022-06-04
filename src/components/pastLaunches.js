@@ -68,11 +68,11 @@ const PastLaunches = () => {
 										<strong className="flight-num tracking-wide text-xl">Flight # {flight_number}</strong>
 									</div>
 
-									<p>
+									<p className="text-lg">
 										<strong>Mission: </strong>
 										{name}
 									</p>
-									<p>
+									<p className="text-lg">
 										<strong>Launch Date: </strong>
 										{moment(date_local).format('dddd, MMMM Do YYYY, h:mm:ss a')}
 									</p>
@@ -84,14 +84,14 @@ const PastLaunches = () => {
 												name: name
 											}}
 											key={name}
-											className="mt-4 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48"
+											className="mt-4 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48 text-lg"
 										>
 											View Details
 										</Link>
 									)}
 									<div className="flex justify-between items-center mt-2">
 										<div className="flex items-center external-links">
-											<a href={links.wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54">
+											<a href={links.wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54 text-lg">
 												<p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">
 													Learn More
 												</p>
@@ -116,7 +116,7 @@ const PastLaunches = () => {
 											<div className="flex items-center external-links">
 												<a
 													href={links.webcast}
-													className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out p-2"
+													className="flex items-center font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out p-2 text-lg"
 												>
 													<p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">
 														Watch on{' '}

@@ -32,9 +32,8 @@ const Launches = () => {
 			}
 		})
 	}
-	//limit function,internally we have just used filter function and //used index of its callback function
+
 	Array.prototype.limit = limit
-	//add it to Array.prototype ,so that any array in JS,can invoke it
 
 	const addMore = () => {
 		// function that will make count show next 12 items
@@ -44,7 +43,7 @@ const Launches = () => {
 	return (
 		<>
 			<Seo title="Launches" />
-			<main className="h-screen w-full bg-gray-900 text-white mx-auto">
+			<main className="h-full w-full bg-gray-900 text-white mx-auto">
 				<div className="flex flex-row justify-center items-end mx-auto mt-20 mb-4 overflow-x-visible">
 					<h1 className="text-white text-2xl font-mono font-bold border-b-8 border-blue-600 mr-2" style={{ lineHeight: 0.45 }}>
 						Launches
@@ -64,7 +63,7 @@ const Launches = () => {
 							const { flight_number, name, date_local, links, rocket, details } = launch
 
 							return (
-								<li className="max-w-sm flex h-full flex-col justify-start p-2 overflow-hidden" key={id}>
+								<li className="max-w-sm flex h-full mx-auto flex-col justify-center p-2 overflow-hidden" key={id}>
 									<div className="flex flex-col h-auto p-4 text-gray-100 shadow-lg bg-gray-700 bg-opacity-25 text-white leading-normal rounded">
 										<div className="flex flex-row justify-between items-start space-x-8 pb-4">
 											<h1 className="tracking-wide font-bold text-xl">{rocket.rocket_name}</h1>
@@ -72,11 +71,11 @@ const Launches = () => {
 											<strong className="flight-num tracking-wide text-xl">Flight # {flight_number}</strong>
 										</div>
 
-										<p>
+										<p className="text-lg">
 											<strong>Mission: </strong>
 											{name}
 										</p>
-										<p>
+										<p className="text-lg">
 											<strong>Launch Date: </strong>
 											{moment(date_local).format('dddd, MMMM Do YYYY, h:mm:ss a')}
 										</p>
@@ -88,14 +87,14 @@ const Launches = () => {
 													name: name
 												}}
 												key={name}
-												className="mt-4 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48"
+												className="mt-4 font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out hover:text-blue-300 hover:underline w-48 text-lg"
 											>
 												View Details
 											</Link>
 										)}
 										<div className="flex justify-between items-center mt-2">
 											<div className="flex items-center external-links">
-												<a href={links.wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54">
+												<a href={links.wikipedia} className="flex transition duration-500 ease-in-out hover:text-blue-300 w-54 text-lg">
 													<p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">
 														Learn More
 													</p>
@@ -120,7 +119,7 @@ const Launches = () => {
 												<div className="flex items-center external-links">
 													<a
 														href={links.webcast}
-														className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out p-2"
+														className="flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition duration-500 ease-in-out p-2 text-lg"
 													>
 														<p className="font-bold font-mono bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300">
 															Watch on{' '}

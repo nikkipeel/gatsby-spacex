@@ -22,14 +22,14 @@ const NextLaunch = () => {
 	return (
 		<div className="flex flex-col justify-center items-center mx-auto w-50">
 			<div className="flex flex-row items-end mt-12 mb-4 overflow-x-visible">
-				<h1 className="text-white text-2xl font-mono font-bold border-b-8 border-blue-600 mr-2" style={{ lineHeight: 0.45 }}>
+				<h1 className="text-white text-2xl font-mono font-bold border-b-8 border-blue-600 mr-2 mb-4" style={{ lineHeight: 0.45 }}>
 					Next Launch{' '}
 				</h1>
 			</div>
 			<img src={launch.links.patch.small} alt={launch.name} style={{ maxWidth: '150px' }} />
-			<h1 className="text-xl font-bold tracking-wide">{launch.name}</h1>
-			<strong>Flight Number {launch.flight_number}</strong>
-			<p class="w-44 text-center">
+			<h1 className="text-2xl font-bold tracking-wide m-2">{launch.name}</h1>
+			<strong className="text-lg">Flight Number {launch.flight_number}</strong>
+			<p class="w-44 text-center text-lg">
 				<strong>Launch Date: </strong>
 				{moment(launch.date_local).format('dddd, MMMM Do YYYY, h:mm:ss a')}
 			</p>
